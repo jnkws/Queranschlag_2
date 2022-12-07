@@ -1,0 +1,1 @@
+Bewegungssensor, um LED#s anzuschalten bzw. Kamerasensor aufzuwärmen
