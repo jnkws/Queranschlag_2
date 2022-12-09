@@ -18,3 +18,8 @@ filterKernel = np.ones(168)/178
 #Clustering (DBSCAN)
 maxDistance = 180
 minSamples = 300
+
+
+#GCodeSender
+
+baudRate = 115200
