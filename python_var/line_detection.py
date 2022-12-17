@@ -128,6 +128,16 @@ class LineDetection:
             dataX.append(line.getDrawableData()[0])
             dataY.append(line.getDrawableData()[1])
         return dataX, dataY
+
+    def getCuttingPoint(self, lineSide):
+        if "left" == lineSide:
+            return self.lines[0].getLeftBorder()
+        elif "right" == lineSide:
+            return self.lines[0].getRightBorder()
+        else:
+            return (self.lines[0].getLeftBorder()\
+                 + self.lines[0].getRightBorder())/2
+
            
 
 

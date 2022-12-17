@@ -19,7 +19,8 @@ filterKernel = np.ones(168)/178
 maxDistance = 180
 minSamples = 300
 
+#CuttingSide
+cuttingSide = "left"
 
 #GCodeSender
-
 baudRate = 115200

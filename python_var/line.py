@@ -1,5 +1,8 @@
 class Line:
     def __init__(self, edges) -> None:
+        #Points are arranged in mathematical 
+        # positive direction. 
+        # Starting point is on the x-axis
         self.x0 = edges[0,0]
         self.y0 = edges[0,1]
         self.x1 = edges[1,0]
@@ -17,7 +20,8 @@ class Line:
         self.grade = -1 #Ranking of all detected lines
 
 
-    #Variablein ParaServer ide festlegt ob rechte oder linke Seite des Clusters genommen wird
+    #Variablein ParaServer ide festlegt 
+    # ob rechte oder linke Seite des Clusters genommen wird
     def calcDistance(self, val1, val2):
         return abs(val1 - val2)
   
@@ -25,5 +29,11 @@ class Line:
         x = [self.x0,self.x1,self.x2,self.x3]
         y = [self.y0,self.y1,self.y2,self.y3]
         return x, y
+
+    def getLeftBorder(self):
+        return self.x2
+
+    def getRightBorder(self):
+        return self.x0
 
    

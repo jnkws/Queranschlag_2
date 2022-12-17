@@ -8,7 +8,7 @@ import logging
 
 class GCodeSender:
     def __init__(self, port) -> None:
-        self.ser = serial.Serial(port="COM8", baudrate=115200)#param_server.baudRate)
+        self.ser = serial.Serial(port=port, baudrate=param_server.baudRate)
         logging.info("Opening serial port")
         self.wakeUp()
     
@@ -36,11 +36,11 @@ class GCodeSender:
         time.sleep(2)
         while self.ser.inWaiting():
             print(self.ser.readline())
-        self.ser.write(b"$$\n") # Hit enter a few times to wake the arduino
-        time.sleep(2)   # Wait for arduino to initialize
-        print(self.ser.inWaiting())
-        while self.ser.inWaiting():
-            print(self.ser.readline())
+        # self.ser.write(b"$$\n") # Hit enter a few times to wake the arduino
+        # time.sleep(2)   # Wait for arduino to initialize
+        # print(self.ser.inWaiting())
+        # while self.ser.inWaiting():
+        #     print(self.ser.readline())
         #grblOut = self.ser.readline() # Wait for response with carriage return
         #logging.info(cmd + " : " + grblOut.strip())
         #logging.info(grblOut)
